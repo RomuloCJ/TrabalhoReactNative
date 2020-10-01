@@ -74,6 +74,9 @@ const Stories = () => {
           <Text style={{marginLeft: 12, marginRight: 17}}>André</Text>
           <Text style={{marginLeft: 12, marginRight: 17}}>André</Text>
           <Text style={{marginLeft: 12, marginRight: 17}}>André</Text>
+          <Text style={{marginLeft: 12, marginRight: 17}}>André</Text>
+          <Text style={{marginLeft: 12, marginRight: 17}}>André</Text>
+          <Text style={{marginLeft: 12, marginRight: 17}}>André</Text>
         </ScrollView>
       </View>
     </>

@@ -1,6 +1,6 @@
 import {Container, Content, Thumbnail} from 'native-base';
 import React from 'react';
-import CardComponent from '../../components/CardComponents';
+import CardComponent from '../../components/CardComponents/CardComponents';
 import Stories from '../../components/Stories';
 
 const Home = () => {

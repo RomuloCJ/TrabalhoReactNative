@@ -1,9 +1,19 @@
 import React from 'react';
 import {Text, View} from 'react-native';
-import {Thumbnail} from 'native-base';
-import {ScrollView} from 'react-native-gesture-handler';
+import {Item, Thumbnail} from 'native-base';
+import {FlatList, ScrollView} from 'react-native-gesture-handler';
 
 const Stories = () => {
+  const stories = [
+    {label: 'Rômulo', style: {marginLeft: 12, marginRight: 17}},
+    {label: 'Ana', style: {marginLeft: 12, marginRight: 17}},
+    {label: 'Verônica', style: {marginLeft: 12, marginRight: 17}},
+    {label: 'Mariana', style: {marginLeft: 12, marginRight: 17}},
+    {label: 'Verônica', style: {marginLeft: 12, marginRight: 17}},
+    {label: 'Jorge', style: {marginLeft: 12, marginRight: 17}},
+    {label: 'Rômulo', style: {marginLeft: 12, marginRight: 17}},
+    {label: 'Rômulo', style: {marginLeft: 12, marginRight: 17}},
+  ];
   return (
     <>
       <View style={{flex: 3}}>
@@ -14,7 +24,7 @@ const Stories = () => {
               borderColor: 'pink',
               borderWidth: 3,
             }}
-            source={require('../assents/img/Foto.png')}
+            source={require('../assets/img/Foto.png')}
           />
           <Thumbnail
             style={{
@@ -22,7 +32,7 @@ const Stories = () => {
               borderColor: 'pink',
               borderWidth: 3,
             }}
-            source={require('../assents/img/Foto.png')}
+            source={require('../assets/img/geralda.jpg')}
           />
           <Thumbnail
             style={{
@@ -30,7 +40,7 @@ const Stories = () => {
               borderColor: 'pink',
               borderWidth: 3,
             }}
-            source={require('../assents/img/Foto.png')}
+            source={require('../assets/img/velhinha.jpg')}
           />
           <Thumbnail
             style={{
@@ -38,7 +48,7 @@ const Stories = () => {
               borderColor: 'pink',
               borderWidth: 3,
             }}
-            source={require('../assents/img/Foto.png')}
+            source={require('../assets/img/mariana.jpg')}
           />
           <Thumbnail
             style={{
@@ -46,7 +56,7 @@ const Stories = () => {
               borderColor: 'pink',
               borderWidth: 3,
             }}
-            source={require('../assents/img/Foto.png')}
+            source={require('../assets/img/veronica.jpg')}
           />
           <Thumbnail
             style={{
@@ -54,7 +64,7 @@ const Stories = () => {
               borderColor: 'pink',
               borderWidth: 3,
             }}
-            source={require('../assents/img/Foto.png')}
+            source={require('../assets/img/jorge.jpg')}
           />
           <Thumbnail
             style={{
@@ -62,21 +72,20 @@ const Stories = () => {
               borderColor: 'pink',
               borderWidth: 3,
             }}
-            source={require('../assents/img/Foto.png')}
+            source={require('../assets/img/Foto.png')}
           />
         </ScrollView>
       </View>
       <View style={{flex: 3}}>
         <ScrollView horizontal={true}>
-          <Text style={{marginLeft: 12, marginRight: 17}}>André</Text>
-          <Text style={{marginLeft: 12, marginRight: 17}}>André</Text>
-          <Text style={{marginLeft: 12, marginRight: 17}}>André</Text>
-          <Text style={{marginLeft: 12, marginRight: 17}}>André</Text>
-          <Text style={{marginLeft: 12, marginRight: 17}}>André</Text>
-          <Text style={{marginLeft: 12, marginRight: 17}}>André</Text>
-          <Text style={{marginLeft: 12, marginRight: 17}}>André</Text>
-          <Text style={{marginLeft: 12, marginRight: 17}}>André</Text>
-          <Text style={{marginLeft: 12, marginRight: 17}}>André</Text>
+          <FlatList
+            horizontal
+            data={stories}
+            renderItem={(story) => (
+              <Text style={story.style}>{story.label}</Text>
+            )}
+            keyExtractor={(story, index) => index}
+          />
         </ScrollView>
       </View>
     </>

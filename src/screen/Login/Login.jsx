@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, View, TouchInput} from 'react-native';
+import {Text, View, TouchInput, Image} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
 import Button from '../../components/Button/Button';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -10,10 +10,10 @@ const Login = ({navigation}) => {
   const [text, setText] = useState();
 
   const onPressLogin = () => {
-    if (login == 'Andre' && password == 'Andre') {
+    if (login == 'Romulo' && password == 'Noah') {
       navigation.navigate('TabNavigator');
     } else {
-      alert('Login ou senha errada');
+      alert('Nome de Usuário e/ou Senha Incorretos');
     }
   };
   const handleChangeLogin = (event) => {
@@ -21,6 +21,18 @@ const Login = ({navigation}) => {
   };
   const handleChangePassword = (event) => {
     setPassword(event);
+  };
+  const inputStyle = {
+    height: 40,
+    width: 350,
+    borderRadius: 3,
+    borderColor: 'rgb(219,219,219)',
+    borderWidth: 1,
+    backgroundColor: '#fafafa',
+    color: 'rgb(38,38,38)',
+    paddingTop: 9,
+    paddingBottom: 7,
+    paddingLeft: 8,
   };
   return (
     <>
@@ -33,18 +45,21 @@ const Login = ({navigation}) => {
           alignItems: 'center',
         }}>
         <View style={{marginBottom: 50}}>
-          <Text style={{fontSize: 50}}>Instagram </Text>
+          <View style={{width: 300, height: 100}}>
+            <Image
+              source={require('../../assets/img/instagram-logo-1.png')}
+              style={{
+                width: null,
+                height: null,
+                resizeMode: 'contain',
+                flex: 1,
+              }}
+            />
+          </View>
         </View>
         <View style={{backgroundColor: 'white', marginBottom: 15}}>
           <TextInput
-            style={{
-              height: 40,
-              width: 350,
-              borderColor: 'gray',
-              borderWidth: 1,
-              backgroundColor: 'lightgray',
-              borderRadius: 10,
-            }}
+            style={inputStyle}
             onChangeText={handleChangeLogin}
             mode="outlined"
             label="Email"
@@ -53,14 +68,7 @@ const Login = ({navigation}) => {
         </View>
         <View style={{marginBottom: 15}}>
           <TextInput
-            style={{
-              height: 40,
-              width: 350,
-              borderColor: 'gray',
-              borderWidth: 1,
-              backgroundColor: 'lightgray',
-              borderRadius: 10,
-            }}
+            style={inputStyle}
             secureTextEntry={true}
             mode="outlined"
             label="Senha"
@@ -83,7 +91,7 @@ const Login = ({navigation}) => {
           />
         </View>
         <View>
-          <Text>Forgot your login details? Get help signing in.</Text>
+          <Text>Esqueceu seu e-mail ou senha? Resete sua senha.</Text>
         </View>
         <View style={{flexDirection: 'row'}}>
           <View
@@ -92,22 +100,7 @@ const Login = ({navigation}) => {
               marginRight: 10,
               borderWidth: 1,
               height: 1,
-              width: 150,
-            }}
-          />
-          <Text
-            style={{
-              marginTop: 42,
-            }}>
-            OR
-          </Text>
-          <View
-            style={{
-              marginTop: 50,
-              marginLeft: 10,
-              borderWidth: 1,
-              height: 1,
-              width: 150,
+              width: '85%',
             }}
           />
         </View>

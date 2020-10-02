@@ -18,10 +18,10 @@ const CardComponent = () => {
         <Left>
           <Thumbnail
             style={{width: 40, height: 40, borderRadius: 40 / 2}}
-            source={require('../../assents/img/Foto.png')}
+            source={require('../../assets/img/Foto.png')}
           />
           <Body>
-            <Text>André</Text>
+            <Text>Rômulo</Text>
           </Body>
         </Left>
         <Right>
@@ -30,7 +30,7 @@ const CardComponent = () => {
       </CardItem>
       <CardItem>
         <Image
-          source={require('../../assents/img/Kazoku.jpg')}
+          source={require('../../assets/img/Noah.jpg')}
           style={{height: 200, width: null, flex: 1}}
         />
       </CardItem>
@@ -48,13 +48,13 @@ const CardComponent = () => {
         </Left>
       </CardItem>
       <CardItem style={{height: 20}}>
-        <Text>101 likes</Text>
+        <Text>52002 likes</Text>
       </CardItem>
       <CardItem>
         <Body>
           <Text>
-            <Text style={{fontWeight: 'bold'}}> André </Text>
-            Hossomaki de Filadelfia
+            <Text style={{fontWeight: 'bold'}}> Rômulo </Text>
+            Noah na piscininha
           </Text>
         </Body>
       </CardItem>
